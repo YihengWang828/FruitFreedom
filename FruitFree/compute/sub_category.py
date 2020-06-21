@@ -8,7 +8,11 @@ import os
 import json
 
 # path = '/home/huasiyu/taobao'
-path = 'C:/Users/Hazewu/Desktop/spark_script/spark_script/taobao'
+# path = 'C:/Users/Hazewu/Desktop/spark_script/spark_script/taobao'
+indexx = str(sys.path[0]).index('compute')
+path_d = str(sys.path[0])[:42]      # 获取上一层路径
+print(path_d)
+path = path_d + 'resource/taobao'
 dir_list = os.listdir(path)
 
 

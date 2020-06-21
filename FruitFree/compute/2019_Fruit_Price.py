@@ -6,9 +6,14 @@ from pyspark.sql.functions import *
 import pandas as pd
 import os
 import json
+import sys
 
 #path = '/home/huasiyu/jintouwang_2019'
-path = ('C:/Users/Hazewu/Desktop/spark_script/spark_script/jintouwang_2019')
+#path = ('C:/Users/Hazewu/Desktop/spark_script/spark_script/jintouwang_2019')
+indexx = str(sys.path[0]).index('compute')
+path_d = str(sys.path[0])[:42]      # 获取上一层路径
+print(path_d)
+path = path_d + 'resource/jintouwang_2019'
 dir_list = os.listdir(path)
 
 
