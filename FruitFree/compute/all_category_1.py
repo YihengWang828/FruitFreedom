@@ -82,6 +82,7 @@ sc = spark.sparkContext
 schema = StructType([StructField("marks", FloatType(), False), StructField("type", StringType(), False),
                      StructField("brand", StringType(), False), StructField("price", FloatType(), False),
                      StructField("sales", LongType(), False)])
+all_category_df = spark.createDataFrame(sc.emptyRDD(),schema)
 
 for dir in dir_list:
     csv_path = 'file:///{}/{}'.format(path, dir)
@@ -119,23 +120,28 @@ for dir in dir_list:
     fruit = RDD.first().split(',')[12].strip('[\'').strip('\']')
     mappedRDD = mappedRDD.map(lambda x: map4(x,fruit))
     df = spark.createDataFrame(mappedRDD, schema)
-    df = df.sort('marks', ascending=False).limit(10)
-    df.show()
-    '''
+    all_category_df = all_category_df.union(df)
+    df.show(3)
+
+all_category_df = all_category_df.sort("marks",ascending=False).limit(20)
+all_category_df.show(10)
+
+'''
     prop = {}
     prop['user'] = 'root'  # 表示用户名是root
     prop['password'] = '123'  # 表示密码是123
     prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
     # 下面就可以连接数据库，采用append模式，表示追加记录到数据库dbtaobao的rebuy表中
-    df.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'sub_category', 'append', prop)
-    '''
-    prop = {}
-    prop['user'] = 'hadoop'  # 表示用户名是root
-    prop['password'] = '123456'  # 表示密码是123
-    prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
+    all_category_df.show.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'all_category', 'append', prop)
+'''
 
-    df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
-                  , 'sub_category_01'
-                  , 'append'
-                  , prop)
+prop = {}
+prop['user'] = 'hadoop'  # 表示用户名是root
+prop['password'] = '123456'  # 表示密码是123
+prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
+
+df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
+            , 'all_category_01'
+             , 'append'
+            , prop)
