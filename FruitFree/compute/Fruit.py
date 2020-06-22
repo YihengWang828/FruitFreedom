@@ -5,11 +5,12 @@ from pyspark.sql.functions import *
 import pandas as pd
 import os
 import json
-
+import config
+import sys
 # path = '/home/huasiyu/fruit_trade'
 # path = 'C:/Users/Hazewu/Desktop/spark_script/spark_script/fruit_trade'
 indexx = str(sys.path[0]).index('compute')
-path_d = str(sys.path[0])[:42]      # 获取上一层路径
+path_d = str(sys.path[0])[:indexx]      # 获取上一层路径
 print(path_d)
 path = path_d + 'resource/fruit_trade'
 dir_list = os.listdir(path)
@@ -104,8 +105,8 @@ for dir in dir_list:
     '''
 
     prop = {}
-    prop['user'] = 'hadoop'  # 表示用户名是root
-    prop['password'] = '123456'  # 表示密码是123
+    prop['user'] = config.user  # 表示用户名是root
+    prop['password'] = config.password  # 表示密码是123
     prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
     df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"

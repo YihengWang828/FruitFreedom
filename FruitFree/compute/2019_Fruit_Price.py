@@ -8,7 +8,7 @@ import os
 import json
 import sys
 print(__name__)
-from . import config
+import config
 
 #path = '/home/huasiyu/jintouwang_2019'
 #path = ('C:/Users/Hazewu/Desktop/spark_script/spark_script/jintouwang_2019')

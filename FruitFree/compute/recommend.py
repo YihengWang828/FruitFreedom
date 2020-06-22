@@ -5,7 +5,7 @@ from pyspark.sql.functions import *
 import pandas as pd
 import os
 import sys
-
+import config
 
 '''
 path_yimutian = '/home/huasiyu/yimutian'
@@ -17,7 +17,7 @@ dir_jintouwang_list = os.listdir(path_jintouwang)
 
 print(sys.path[0])
 indexx = str(sys.path[0]).index('compute')
-path_d = str(sys.path[0])[:42]      # 获取上一层路径
+path_d = str(sys.path[0])[:indexx]      # 获取上一层路径
 print(path_d)
 path_yimutian = path_d + 'resource/yimutian/first'
 dir_yimutian_list = os.listdir(path_yimutian)
@@ -82,9 +82,9 @@ df.show(10)
 #df.repartition(1).write.csv('file:///home/huasiyu/recommend')
     
 prop = {}
-prop['user'] = 'hadoop'  # 表示用户名是root
-prop['password'] = '123456'  # 表示密码是123
+prop['user'] = config.user  # 表示用户名是root
+prop['password'] = config.password  # 表示密码是123
 prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
 # 下面就可以连接数据库
-df.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'recommend', 'append', prop)
+df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs", 'recommend', 'append', prop)
