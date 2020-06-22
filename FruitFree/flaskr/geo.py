@@ -5,10 +5,12 @@ from flask import(
 from werkzeug.security import check_password_hash,generate_password_hash
 from pyecharts import options as opts
 import csv
+from . import db
 
 bp=Blueprint('map',__name__,url_prefix='/map')
 @bp.route('/',methods=('GET','POST'))
 def fruit():
+    conn=db.get_db()
     csvFile=open("flaskr/yimutian.csv","r",encoding='utf-8')
     reader=csv.reader(csvFile)
     items=[]

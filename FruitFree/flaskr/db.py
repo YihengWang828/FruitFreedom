@@ -1,18 +1,20 @@
+from . import config
 import pymysql
 from flask import current_app,g
 from flask.cli import with_appcontext
 import click
+
 def get_db():
     if 'db' not in g:
         g.db=pymysql.connect(
             host='localhost',
-            user='hadoop',
-            password='123456',
-            db='ffdbs',
+            user=config.user,
+            password=config.password,
+            db=config.database,
             charset='utf8'
         )
     return g.db
-def close_db():
+def close_db(e=None):
     db=g.pop('db',None)
     if db is not None:
         db.close()
@@ -20,7 +22,7 @@ def init_db():
     db=get_db()
     with db.cursor() as cursor:
         with current_app.open_resource('schema.sql') as f:
-            ret=f.read().encode('utf8').split(';')
+            ret=f.read().decode('utf8').split(';')
             # drop last empty entry
             print(ret)
             ret.pop()
