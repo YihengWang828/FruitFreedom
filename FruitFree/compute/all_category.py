@@ -5,10 +5,10 @@ from pyspark.sql.functions import *
 
 import pandas as pd
 import os
+import sys
 import json
 
 # path = '/home/huasiyu/taobao'
-# path = 'C:/Users/Hazewu/Desktop/spark_script/spark_script/taobao'
 indexx = str(sys.path[0]).index('compute')
 path_d = str(sys.path[0])[:42]      # 获取上一层路径
 print(path_d)
@@ -53,11 +53,12 @@ def map2(line,avg0,avg1,avg2):
     new_lst.append(float(lst[2]))
     new_lst.append(float(lst[4]))
     new_lst.append(int(lst[13]))
-    new_lst.append(lst[17])
+    new_lst.append(lst[17].replace("\"",''))
     if lst[11]!='':
         new_lst.append(float(lst[11]))
     else:
         new_lst.append(float(lst[10]))
+    new_lst.append(lst[6])
     return new_lst
 
 def map3(line, delta0, delta1, delta2, delta3, min0, min1, min2, min3):
@@ -69,19 +70,25 @@ def map3(line, delta0, delta1, delta2, delta3, min0, min1, min2, min3):
 
 def map4(line,fruit):
     lst = []
-    lst.append(line[6])
     lst.append(fruit)
     lst.append(line[4])
     lst.append(line[5])
     lst.append(line[3])
+    lst.append(line[0])
+    lst.append(line[1])
+    lst.append(line[2])
+    lst.append(line[7])
+    lst.append(line[6])
     return lst
 
 conf = SparkConf().setAppName('all_category.py').setMaster('local[*]')
 spark = SparkSession.builder.config(conf=conf).getOrCreate()
 sc = spark.sparkContext
-schema = StructType([StructField("marks", FloatType(), False), StructField("type", StringType(), False),
-                     StructField("brand", StringType(), False), StructField("price", FloatType(), False),
-                     StructField("sales", LongType(), False)])
+schema = StructType([StructField("type", StringType(), False),StructField("brand", StringType(), False),
+                     StructField("price", FloatType(), False),StructField("sales", LongType(), False),
+                     StructField("delivermark", FloatType(), False),StructField("describemark", FloatType(), False),
+                     StructField("servermark", FloatType(), False), StructField("marks", FloatType(), False),
+                     StructField("picture", StringType(), False)])
 all_category_df = spark.createDataFrame(sc.emptyRDD(),schema)
 
 for dir in dir_list:
@@ -120,12 +127,13 @@ for dir in dir_list:
     fruit = RDD.first().split(',')[12].strip('[\'').strip('\']')
     mappedRDD = mappedRDD.map(lambda x: map4(x,fruit))
     df = spark.createDataFrame(mappedRDD, schema)
+    # df = df.sort('marks', ascending=False).limit(10)
+    df = df.sort('marks', ascending=False).limit(10)
     all_category_df = all_category_df.union(df)
     df.show(3)
 
-all_category_df = all_category_df.sort("marks",ascending=False).limit(20)
 all_category_df.show(10)
-
+#all_category_df.repartition(1).write.csv('file:///home/huasiyu/all_category')
 '''
     prop = {}
     prop['user'] = 'root'  # 表示用户名是root
@@ -135,13 +143,12 @@ all_category_df.show(10)
     # 下面就可以连接数据库，采用append模式，表示追加记录到数据库dbtaobao的rebuy表中
     all_category_df.show.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'all_category', 'append', prop)
 '''
-
 prop = {}
 prop['user'] = 'hadoop'  # 表示用户名是root
 prop['password'] = '123456'  # 表示密码是123
 prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
-df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
-            , 'all_category_01'
-             , 'append'
-            , prop)
+all_category_df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
+                            , 'all_category'
+                            , 'append'
+                            , prop)
