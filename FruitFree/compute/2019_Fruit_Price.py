@@ -7,15 +7,17 @@ import pandas as pd
 import os
 import json
 import sys
+print(__name__)
+from . import config
 
 #path = '/home/huasiyu/jintouwang_2019'
 #path = ('C:/Users/Hazewu/Desktop/spark_script/spark_script/jintouwang_2019')
 indexx = str(sys.path[0]).index('compute')
-path_d = str(sys.path[0])[:42]      # 获取上一层路径
-print(path_d)
+path_d = str(sys.path[0])[:indexx]      # 获取上一层路径
 path = path_d + 'resource/jintouwang_2019'
 dir_list = os.listdir(path)
-
+print(path)
+print(dir_list)
 
 def part(line):
     lst = line.split(',')
@@ -57,8 +59,8 @@ for dir in dir_list:
     df.write.jdbc("jdbc:mysql://localhost:3306/datebase", '2019_Fruit_Price', 'append', prop)
     '''
     prop = {}
-    prop['user'] = 'hadoop'  # 表示用户名是root
-    prop['password'] = '123456'  # 表示密码是123
+    prop['user'] = config.user  # 表示用户名是root
+    prop['password'] = config.password  # 表示密码是123
     prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
     df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
