@@ -52,7 +52,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 sc = spark.sparkContext
 
 for dir in dir_yimutian_list:
-    csv_path = 'file://{}/{}'.format(path_yimutian, dir)
+    csv_path = 'file:///{}/{}'.format(path_yimutian, dir)
     #df = spark.read.format('csv').option("header", "true").schema(schema).load(csv_path)
     RDD1 = sc.textFile(csv_path)
     header = RDD1.first()
@@ -64,7 +64,7 @@ for dir in dir_yimutian_list:
     df1.show(10)
 
 for dir in dir_jintouwang_list:
-    csv_path = 'file://{}/{}'.format(path_jintouwang, dir)
+    csv_path = 'file:///{}/{}'.format(path_jintouwang, dir)
     #df = spark.read.format('csv').option("header", "true").schema(schema).load(csv_path)
     RDD2 = sc.textFile(csv_path)
     header = RDD2.first()
@@ -87,4 +87,7 @@ prop['password'] = config.password  # 表示密码是123
 prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
 # 下面就可以连接数据库
-df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs", 'recommend', 'append', prop)
+df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
+              , 'recommend'
+              , 'append'
+              , prop)
