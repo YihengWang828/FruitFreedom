@@ -21,4 +21,6 @@ def create_app(test_config=None):
     db.init_app(app)
     from . import geo
     app.register_blueprint(geo.bp)
+    from . import recommendation
+    app.register_blueprint(recommendation.bp)
     return app

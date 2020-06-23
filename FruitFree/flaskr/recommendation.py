@@ -8,10 +8,15 @@ import csv
 from . import db
 
 bp=Blueprint('recom',__name__,url_prefix='/recom')
-@bp.route('/max',methods=('GET','POST'))
-def recom_max():
+@bp.route('/',methods=('GET','POST'))
+def recom():
     conn=db.get_db()
+    cursor=conn.cursor()
 
-
-def recom_min():
-    conn=db.get_db()
+    #测试一下
+    type_="水果"
+    sql="select * from all_category where category = '水果' ;"
+    print(sql)
+    cursor.execute(sql)
+    results=cursor.fetchall()
+    print(results)
