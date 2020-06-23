@@ -63,7 +63,7 @@ for dir in dir_list:
     prop['password'] = config.password  # 表示密码是123
     prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
-    df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
+    all_category_df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
                   , '2019_Fruit_Price'
                   , 'append'
                   , prop)
