@@ -23,4 +23,6 @@ def create_app(test_config=None):
     app.register_blueprint(geo.bp)
     from . import recommendation
     app.register_blueprint(recommendation.bp)
+    from . import fruit_2019
+    app.register_blueprint(fruit_2019.bp)
     return app

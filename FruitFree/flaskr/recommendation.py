@@ -15,8 +15,23 @@ def recom():
 
     #测试一下
     type_="水果"
-    sql="select * from all_category where category = '水果' ;"
+    sql="select * from all_category where category = '水果' order by marks desc limit 10 ;"
     print(sql)
     cursor.execute(sql)
     results=cursor.fetchall()
     print(results)
+    data=[]
+    for re in results:
+        data.append(
+            {
+                "category":re[0],
+                "brand":re[1],
+                "price":re[2],
+                "sales":re[3],
+                "delivermark":re[4],
+                "describemark":re[5],
+                "servemark":re[6],
+                "picture":re[8]
+            }
+        )
+    print(data)
