@@ -22,7 +22,7 @@ def fruit_2019():
     print(results)
     '''
     if request.method=='GET':
-        return render_template('fruit_2019.html')
+        return render_template('fruit_hangqing.html')
     elif request.method=='POST':
         a=request.get_json(force=True)
         print(a)
