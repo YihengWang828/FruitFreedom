@@ -7,8 +7,8 @@ from pyecharts import options as opts
 import csv
 from . import db
 
-bp=Blueprint('jintou',__name__,url_prefix='/jintou')
-@bp.route('/',methods=('GET','POST'))
+bp=Blueprint('jintou',__name__)
+@bp.route('/jintou/',methods=('GET','POST'))
 def fruit_2019():
     conn=db.get_db()
     cursor=conn.cursor()
@@ -46,3 +46,6 @@ def fruit_2019():
             "date":date,
             "value":value
         })
+@bp.route('/index/',methods=('GET',),endpoint='index')
+def index():
+    return render_template('shouye.html')
