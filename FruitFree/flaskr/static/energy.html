@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="echarts.js"></script>
+    <script src="echarts-gl.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 1000px;height:500px;"></div>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+    var data = [241, 125, 105, 102, 93, 74, 73, 71, 71, 54, 51, 50, 46, 44, 35, 32, 26,];
+    var titlename = ['椰子', '鲜枣', '菠萝蜜', '山楂', '香蕉', '柿子', '石榴', '荔枝', '龙眼', '苹果', '桃', '梨', '樱桃', '菠萝', '芒果', '草莓', '西瓜'];
+    var myColor = ['#1089E7', '#F57474', '#56D0E3', '#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6', '#F8B448', '#8B78F6'];
+    option = {
+        backgroundColor: '#fff',
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+                shadowStyle: {
+                    // color: 'rgba(255, 109, 0, 0.8)'
+                }
+            }
+        },
+        
+        //图标位置
+        grid: {
+            // top: '20%',
+            left: '15%'
+
+        },
+        xAxis: {
+            show: false
+        },
+        yAxis: [{
+            show: true,
+            data: titlename,
+            inverse: true,
+            axisLine: {
+                show: false
+            },
+            splitLine: {
+                show: false
+            },
+            axisTick: {
+                show: false
+            },
+            axisLabel: {
+                color: '#333',
+                formatter: (value, index) => {
+                    return [
+                        `{lg|${index + 1}}  ` + '{title|' + value + '} '
+                    ].join('\n')
+                },
+                rich: {
+                    lg: {
+                        backgroundColor: '#8d7fec',
+                        color: '#fff',
+                        borderRadius: 15,
+                        padding: 2,
+                        align: 'center',
+                        width: 15,
+                        height: 15
+                    },
+                    title: {
+                        backgroundColor: '#8d7fec',
+                        color: '#fff',
+                        width: 77,
+                        align: 'left',
+                        borderRadius: 5,
+                        padding: 5,
+                    }
+                }
+            },
+        }],
+        series: [{
+            name: '(cal/100g)',
+            type: 'bar',
+            yAxisIndex: 0,
+            data: data,
+            barWidth: 10,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right',
+                    textStyle: {
+                        color: '#333',
+                        fontSize: '16',
+                    }
+                }
+            },
+            itemStyle: {
+                normal: {
+                    barBorderRadius: 20,
+                    color: function (params) {
+                        var num = myColor.length;
+                        return myColor[params.dataIndex % num]
+                    },
+                    // 渐变色
+                    // color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                    // offset: 0,
+                    // color: 'rgba(0,255,0)'
+                    // }, {
+                    // offset: 1,
+                    // color: 'rgb(215 ,255,0)'
+                    // }]),
+
+                }
+            },
+
+        },
+        ]
+    };
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>
