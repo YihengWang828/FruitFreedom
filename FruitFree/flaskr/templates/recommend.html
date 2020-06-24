@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    推荐
+{% endblock %}
+
+{% block navigation_bar %}
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{ url_for('map_distribution') }}">产地</a></li>
+            <li><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
+            <li   class="current"><a href="{{ url_for('recommend') }}">推荐</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block echarts %}
+
+{#<title>显示图像</title>#}
+{#<link rel="stylesheet" href="{{ url_for('static',filename='css/slide_show.css') }}">#}
+{#<script language="javascript" type="text/javascript" src="{{url_for('static', filename='js/slide_show.js') }}"></script>#}
+{#<div id="fade_focus">#}
+{#    <div class="loading">Loading...</div>#}
+{#    <ul>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
+{#    </ul>#}
+{#</div>#}
+
+
+
+
+    <form action="{{ url_for('recommend') }}" method='POST'>
+        <select name="type">
+            <option value="None">请选择水果种类</option>
+            {% for t in types %}
+                <option value="{{ t[0] }}">{{ t[0] }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">查询</button>
+    </form>
+
+    <table>
+        {% for f in information %}
+            <div class="post">
+                <img src="{{ f[0] }}">
+                <h4>
+                    <a href="#">{{ f[1] }}</a>
+                </h4>
+                <p>{{ f[2] }}</p>
+                <p>{{ f[3] }}人付款，评分{{ f[4] }}</p>
+            </div>
+        {% endfor %}
+    </table>
+{% endblock %}

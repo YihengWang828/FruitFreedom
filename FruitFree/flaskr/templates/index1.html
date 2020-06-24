@@ -1,0 +1,670 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block navigation_bar %}
+    <nav>
+        <ul>
+            <li class="current"><a href="{{ url_for('index') }}">首页</a></li>
+            <li><a href="{{ url_for('map_distribution') }}">产地</a></li>
+            <li><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
+            <li><a href="{{ url_for('recommend') }}">推荐</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block echarts %}
+    <!-- 水果所含热量表 -->
+    <div id="main_1" style="width: 900px;height:800px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main_1'));
+
+        // 指定图表的配置项和数据
+        var data = [241, 125, 105, 102, 93, 74, 73, 71, 71, 54, 51, 50, 46, 44, 35, 32, 26,];
+        var titlename = ['椰子', '鲜枣', '菠萝蜜', '山楂', '香蕉', '柿子', '石榴', '荔枝', '龙眼', '苹果', '桃', '梨', '樱桃', '菠萝', '芒果', '草莓', '西瓜'];
+        var myColor = ['#1089E7', '#F57474', '#56D0E3', '#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6', '#F8B448', '#8B78F6'];
+        option = {
+            backgroundColor: '#fff',
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow',
+                    shadowStyle: {
+                        // color: 'rgba(255, 109, 0, 0.8)'
+                    }
+                }
+            },
+            title: {
+                text: '常见水果所含能量',
+                textStyle: {
+                    fontSize: 15,
+                    color: '#333'
+                },
+            },
+            //图标位置
+            grid: {
+                // top: '20%',
+                left: '15%'
+            },
+            xAxis: {
+                show: false
+            },
+            yAxis: {
+                show: true,
+                data: titlename,
+                inverse: true,
+                axisLine: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    color: '#333',
+
+                    formatter: (value, index) => {
+                        return [
+                            `{lg|${index + 1}}  ` + '{title|' + value + '} '
+                        ].join('\n')
+                    },
+                    rich: {
+                        lg: {
+                            backgroundColor: '#8d7fec',
+                            color: '#fff',
+                            borderRadius: 15,
+                            padding: 2,
+                            align: 'center',
+                            width: 15,
+                            height: 15
+                        },
+                        title: {
+                            backgroundColor: '#8d7fec',
+                            color: '#fff',
+                            width: 77,
+                            align: 'left',
+                            borderRadius: 5,
+                            padding: 5
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: '(cal/100g)',
+                type: 'bar',
+                yAxisIndex: 0,
+                data: data,
+                barWidth: 10,
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        textStyle: {
+                            color: '#333',
+                            fontSize: '16',
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        barBorderRadius: 20,
+                        color: function (params) {
+                            var num = myColor.length;
+                            return myColor[params.dataIndex % num]
+                        }
+                    }
+                },
+
+        }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <!-- 中国果园面积分布情况 -->
+    <div id="main_2" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main_2'));
+        var seriesData = [
+            {
+                name: "香蕉园",
+                value: "3"
+            }, {
+                name: "苹果园",
+                value: "18"
+            }, {
+                name: "柑桔园",
+                value: "20"
+            }, {
+                name: "梨园",
+                value: "9"
+            }, {
+                name: "葡萄园",
+                value: "6"
+            }, {
+                name: "其它",
+                value: "44"
+            }
+        ];
+        var legendData = ["香蕉园", "苹果园", "柑桔园", "梨园", "葡萄园", "其它"]
+        var colorList = ['#73DDFF', '#73ACFF', '#FDD56A', '#FDB36A', '#FD866A', '#9E87FF', '#58D5FF'];
+        option = {
+            title: {
+                text: '中国果园面积分布情况',
+                x: 'center',
+                y: 'center',
+                textStyle: {
+                    color: '#4169E1',
+                    fontSize:10,
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                borderColor: 'rgba(255,255,255,.3)',
+                backgroundColor: 'rgba(13,5,30,.6)',
+                borderWidth: 1,
+                padding: 5,
+                formatter: function (parms) {
+                    var str = parms.marker + "" + parms.data.name + "</br>"
+                    "占比：" + parms.percent + "%";
+                    return str;
+                }
+            },
+            legend: {
+                type: "scroll",
+                orient: 'vertical',
+                left: 'left',
+                align: 'auto',
+                top: 'middle',
+                textStyle: {
+                    color: 'black'
+                },
+                data: legendData
+            },
+            series: [{
+                type: 'pie',
+                center: ['50%', '50%'],
+                radius: ['25%', '45%'],
+                clockwise: true,
+                avoidLabelOverlap: true,
+                hoverOffset: 15,
+                itemStyle: {
+                    normal: {
+                        color: function (params) {
+                            return colorList[params.dataIndex]
+                        }
+                    }
+                },
+                label: {
+                    show: true,
+                    position: 'outside',
+                    formatter: '{a|{b}：{d}%}\n{hr|}',
+                    rich: {
+                        hr: {
+                            backgroundColor: 't',
+                            borderRadius: 3,
+                            width: 3,
+                            height: 3,
+                            padding: [3, 3, 0, -12]
+                        },
+                        a: {
+                            padding: [-30, 15, -20, 15]
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        length: 20,
+                        length2: 30,
+                        lineStyle: {
+                            width: 1
+                        }
+                    }
+                },
+                data: seriesData
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <!-- 产量分布情况 -->
+    <div id="main_3" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main_3'));
+        option = {
+            title: {
+                text: '中国水果产量区域分布情况',
+                subtext: '为什么水果价格存在地区差异',
+                left: 'center',
+                top: "5%",
+            },
+            backgroundColor: "white",
+            color: ['#2edfa3', '#bce672', '#ff4777', '#70f3ff', '#4b5cc4', '#f47983', '#8d4bbb', '#6635EF', '#FFAFDA'],
+            tooltip: {
+                trigger: 'item',
+                formatter: "地区 <br/>{b}:{d}%"
+            },
+            legend: {
+                orient: 'horizontal',
+                icon: 'circle',
+                bottom: 20,
+                x: 'center',
+                textStyle: {
+                    color: '#000'
+                },
+                data: ['东北', '华北', '西北', '西南', '华南', '华中', '华东']
+            },
+            series: [{
+                name: '访问来源',
+                type: 'pie',
+                selectedMode: 'single',
+                radius: [0, '38%'],
+                color: ['#2edfa3', '#bce672', '#ff4777', '#FFAFDA', '#4b5cc4', '#f47983', '#8d4bbb', '#6635EF',],
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'inner',
+                        formatter: '{d}%',
+                        textStyle: {
+                            color: '#fff',
+                            fontWeight: 'normal',
+                            fontSize: 20
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [{
+                    value: 4.34,
+                    name: '东北'
+                },
+                    {
+                        value: 10.56,
+                        name: '华北'
+                    },
+                    {
+                        value: 16.59,
+                        name: '西北'
+                    },
+                    {
+                        value: 9.81,
+                        name: '西南'
+                    },
+                    {
+                        value: 15.23,
+                        name: '华南'
+                    },
+                    {
+                        value: 17.86,
+                        name: '华中'
+                    },
+                    {
+                        value: 25.61,
+                        name: '华东'
+                    },
+
+                ]
+            },
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: ['40%', '42%'],
+                    label: {
+                        normal: {
+                            formatter: '{b|{b}}\n{hr|}\n{d|{d}%}',
+                            rich: {
+                                b: {
+                                    fontSize: 10,
+                                    // color: '#708090',
+                                    align: 'left',
+                                    padding: 4
+                                },
+                                hr: {
+                                    borderColor: '#12EABE',
+                                    width: '100%',
+                                    borderWidth: 2,
+                                    height: 0
+                                },
+                                d: {
+                                    fontSize: 10,
+                                    // color: '#D3D3D3',
+                                    align: 'left',
+                                    padding: 4
+                                },
+                                c: {
+                                    fontSize: 20,
+                                    color: '#fff',
+                                    align: 'center',
+                                    padding: 4
+                                }
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: true,
+                            length: 20,
+                            length2: 20,
+                            lineStyle: {
+                                type: 'dashed',
+                                width: 2
+                            }
+                        }
+                    },
+                    data: [{
+                        value: 4.34,
+                        name: '东北'
+                    },
+                        {
+                            value: 10.56,
+                            name: '华北'
+                        },
+                        {
+                            value: 16.59,
+                            name: '西北'
+                        },
+                        {
+                            value: 9.81,
+                            name: '西南'
+                        },
+                        {
+                            value: 15.23,
+                            name: '华南'
+                        },
+                        {
+                            value: 17.86,
+                            name: '华中'
+                        },
+                        {
+                            value: 25.61,
+                            name: '华东'
+                        },
+
+
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <!-- vb含量 -->
+    <div id="main_4" style="width: 800px;height:600px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main_4'));
+
+        // 指定图表的配置项和数据
+        option = {
+            title: {
+                text: '常见水果B族维生素含量(mg/100g)',
+                subtext: '含量过低的水果约为0',
+                left: 'center',
+                top: "10%",
+            },
+            xAxis3D: {
+                type: 'category',
+                name: '水果名称',
+                data: ['龙眼', '荔枝', '鲜枣', '菠萝蜜', '香蕉', '杨桃', '桃', '柠檬', '杏', '樱桃', '椰子', '橙', '梨', '猕猴桃', '草莓', '芒果', '苹果', '西瓜'],
+                nameGap: 30,
+                axisLabel: {
+                    interval: 0
+                },
+                nameTextStyle:{
+                    fontSize:12
+                }
+            },
+            yAxis3D: {
+                type: 'value',
+                nameGap: 30,
+                name: '核黄素(mg)',
+                nameTextStyle:{
+                    fontSize:12
+                }
+            },
+            zAxis3D: {
+                type: 'value',
+                nameGap: 30,
+                name: '尼克酸(mg)',
+                nameTextStyle:{
+                    fontSize:12
+                }
+            },
+            grid3D: {
+                boxWidth: 200,
+                boxDepth: 80,
+                viewControl: {
+                    // projection: 'orthographic'
+                },
+                light: {
+                    main: {
+                        intensity: 1.2,
+                        shadow: true
+                    },
+                    ambient: {
+                        intensity: 0.3
+                    }
+                }
+            },
+            series: [{
+                type: 'bar3D',
+                data: [
+                    [0, 0.15, 1.25],
+                    [1, 0.04, 1.1],
+                    [2, 0.1, 0.95],
+                    [3, 0.05, 0.7],
+                    [4, 0.05, 0.62],
+                    [5, 0.04, 0.7],
+                    [6, 0.03, 0.7],
+                    [7, 0.01, 0.72],
+                    [8, 0.02, 0.6],
+                    [9, 0.01, 0.6],
+                    [10, 0, 0.5],
+                    [11, 0.03, 0.3],
+                    [12, 0.03, 0.3],
+                    [13, 0.01, 0.3],
+                    [14, 0.05, 0.3],
+                    [15, 0.06, 0.3],
+                    [16, 0.01, 0.2],
+                    [17, 0.01, 0.1],
+
+                ],
+                itemStyle: {
+                    normal: {
+                        //这里是重点
+                        color: function (params) {
+                            //注意，如果颜色太少的话，后面颜色不会自动循环，最好多定义几个颜色
+                            var colorList = ['#313695', '#4575b4', '#74add1', '#abd9e9', '#e0f3f8', '#ffffbf', '#fee090', '#fdae61', '#f46d43', '#d73027', '#a50026', '#d73027', '#f46d43', '#fdae61', '#fee090', '#ffffbf', '#e0f3f8', '#74add1'];
+                            return colorList[params.dataIndex]
+                        }
+                    }
+                },
+                shading: 'lambert',
+
+                label: {
+                    textStyle: {
+                        fontSize: 16,
+                        borderWidth: 1
+                    }
+                },
+
+                emphasis: {
+                    label: {
+                        textStyle: {
+                            fontSize: 20,
+                            color: '#900'
+                        },
+                        show: false,
+                    },
+                    itemStyle: {
+                        color: '#90ed7d'
+                    }
+                }
+            }]
+        }
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+    <!-- vc含量 -->
+    <div id="main_5" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main_5'));
+
+        // 指定图表的配置项和数据
+        let data_fruit = {
+            xData: ['鲜枣', '黑加仑', '番石榴', '猕猴桃', '山楂', '草莓', '木瓜', '龙眼', '荔枝', '桑葚', '橙子','柿子','柑橘','葡萄','柚','芒果','柠檬','菠萝','哈密瓜','樱桃','石榴','杨梅','菠萝蜜','枇杷','香蕉','桃','杨桃','梨','椰子','西瓜','苹果'],
+            yData: [243, 181, 68, 62, 53, 47, 43, 43, 41, 38, 33,30,28,25,23,23,22,18,12,10,9,9,9,8,8,7,7,6,6,6,4]
+        }
+        /**
+         双X轴标签对应，伪实现思路：
+         底部的标签也是柱状图，对应包含的区域为上方X轴条数占总数的比例，设为宽度即可
+         */
+        option = {
+            title: {
+                text: '常见水果维生素C含量',
+                left: 'center',
+                top:"10%",
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            grid: [{
+                top: 100,
+                bottom: 101
+            },
+                {
+                    height: 60,
+                    bottom: 40
+                }
+            ],
+            xAxis: [{
+                type: 'category',
+                data: data_fruit.xData,
+                gridIndex: 0,
+                name:'水果名称',
+                nameLocation:'middle',
+                nameGap:50,
+                nameTextStyle:{
+                    color:'#696969',
+                    fontWeight:'bold'
+                },
+                axisLabel: {
+                    color: '#333',
+                    interval:0,
+                    formatter: function (value) {
+                        //x轴的文字改为竖版显示
+                        var str = value.split("");
+                        return str.join("\n");
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#e7e7e7'
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: '#e7e7e7'
+                    }
+                },
+                zlevel: 1
+            },
+                {
+                    type: 'category',
+                    gridIndex: 1,
+                    axisLine: {
+                        show: false
+                    },
+                    zlevel: 1
+                }
+            ],
+            yAxis: [{
+                type: 'value',
+                gridIndex: 0,
+                nameLocation:'middle',
+                nameGap:40,
+                nameRotate:90,
+                name:'维生素含量(mg/100g)',
+                nameTextStyle:{
+                    color:'#696969',
+                    fontWeight:'bold'
+                },
+                axisLabel: {
+                    color: '#333'
+                },
+                splitLine: {
+                    lineStyle: {
+                        type: 'dashed'
+                    }
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#ccc'
+                    }
+                },
+                axisTick: {
+                    lineStyle: {
+                        color: '#ccc'
+                    }
+                }
+            }, {
+                type: 'value',
+                gridIndex: 1,
+                axisLabel: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                }
+            }],
+            series: [{
+                data: data_fruit.yData,
+                type: 'bar',
+                label: {
+                    show: true,
+                    position: 'top',
+                    textStyle: {
+                        color: '#555'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: (params) => {
+                            let colors = ['#4150d8', '#28bf7e', '#ed7c2f', '#f2a93b', '#f9cf36', '#4a5bdc', '#4cd698', '#f4914e', '#fcb75b', '#ffe180', '#b6c2ff', '#96edc1', '#28bf7e', '#ed7c2f', '#f2a93b', '#f9cf36', '#4a5bdc', '#4cd698', '#f4914e', '#fcb75b', '#ffe180', '#b6c2ff', '#96edc1', '#28bf7e', '#ed7c2f', '#f2a93b', '#f9cf36', '#4a5bdc', '#4cd698', '#f4914e', '#fcb75b', '#ffe180', '#b6c2ff', '#96edc1']
+                            return colors[params.dataIndex]
+                        }
+                    }
+                },
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+{% endblock %}
