@@ -14,7 +14,7 @@ def fruit():
     cursor =conn.cursor()
     
     if request.method=='GET':
-        return render_template('fruit_map.html')
+        return render_template('chandi.html')
     elif request.method=='POST':
         a=request.get_json(force=True)
         print(a)

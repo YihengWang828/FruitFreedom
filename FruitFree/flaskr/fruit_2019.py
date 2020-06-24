@@ -22,7 +22,7 @@ def fruit_2019():
     print(results)
     '''
     if request.method=='GET':
-        return render_template('fruit_hangqing.html')
+        return render_template('hangqing.html')
     elif request.method=='POST':
         a=request.get_json(force=True)
         print(a)
@@ -49,3 +49,6 @@ def fruit_2019():
 @bp.route('/index/',methods=('GET',),endpoint='index')
 def index():
     return render_template('shouye.html')
+@bp.route('/zhuye/',methods=('GET',))
+def zhuye():
+    return render_template('zhuye.html')
