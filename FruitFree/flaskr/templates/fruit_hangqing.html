@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水果行情</title>
+    <!-- 引入 ECharts 文件 -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+	<script type=text/javascript src="../static/js/jquery.js"></script>
+</head>
+<body>
+ <div id='select'>
+    <div>
+        <select id='cate'>
+        </select>
+    </div>
+	<div>
+        <select id='mon'>
+        </select>
+    </div>
+ </div>
+
+    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+	    var type_all = ['木瓜', '哈密瓜', '芒果', '菠萝', '葡萄', '梨', '柠檬', '甘蔗', '香蕉', '石榴', '毛桃', '柚子', '水蜜桃', '杨梅', '山楂', '苹果', '荔枝', '龙眼', '樱桃', '柿子'
+        ];
+		
+		var month_all = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'
+        ];
+		
+		function addOption_cate() {
+            var obj = document.getElementById('cate');
+            obj.options.add(new Option("水果种类", "西瓜"))
+            for (var i = 0; i < type_all.length; i++) {
+                obj.options.add(new Option(type_all[i], type_all[i]))
+            }
+        }
+		
+		function addOption_mon() {
+            var obj = document.getElementById('mon');
+            obj.options.add(new Option("月份", "1"))
+            for (var i = 0; i < month_all.length; i++) {
+                obj.options.add(new Option(month_all[i], month_all[i]))
+            }
+        }
+		
+		addOption_cate();
+		
+		addOption_mon();
+		
+		var name = "西瓜";
+		
+		var month = "1";
+		
+		var data_time=['1日','2日','3日','4日','5日','6日','7日','8日','9日','10日','11日','12日','13日','14日','15日','16日','17日','18日','19日','20日','21日','22日','23日','24日','25日','26日','27日','28日','29日','30日','31日'
+		];
+		
+		var data_value=[1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05,1.05];
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '这是第'+month+'月份'+name+'的行情图'
+            },
+            tooltip: {},
+            legend: {
+                data:['price']
+            },
+            xAxis: {
+                data: data_time
+            },
+            yAxis: {},
+            series: [{
+                name: 'price',
+                type: 'line',
+                data: data_value
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+		
+		$(document).ready(function () {
+            $("#select").change(function () {
+			
+                var selected_month = $("#mon").children('option:selected').val();
+				
+				var selected_fruit = $("#cate").children('option:selected').val();
+				
+                console.log(JSON.stringify({
+                    'month': selected_month
+                }));
+				console.log(JSON.stringify({
+                    'name': selected_fruit
+                }));
+				
+				$.post("/jintou/", JSON.stringify({
+				        'month': selected_month,
+                        'name': selected_fruit
+                    }),
+                    function (data_, status) {
+                        data_ = eval(data_)
+                        console.log( data_)
+                        data_time = data_['date']
+                        console.log(name)
+						data_value = data_['value']
+		                var option = {
+                        title: {
+                        text: '这是第'+selected_month+'月份'+selected_fruit+'的行情图'
+                        },
+                        tooltip: {},
+                        legend: {
+                        data:['price']
+                        },
+                        xAxis: {
+                            data: data_time
+                        },
+                        yAxis: {},
+                        series: [{
+                            name: 'price',
+                            type: 'line',
+                            data: data_value
+                        }]
+                     };
+		                 myChart.setOption(option, true);
+				    });
+			});
+		});
+
+    </script>
+</body>
+</html>
