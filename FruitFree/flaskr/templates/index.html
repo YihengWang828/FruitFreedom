@@ -15,58 +15,24 @@
     </nav>
 {% endblock %}
 
-{% block slide_content %}
-    <!--------------Content--------------->
-    <section id="content">
-        <div class="feature">
-            <div class="camera_wrap camera_magenta_skin" id="camera_wrap">
-                <div data-thumb="../static/img/slides/thumbs/1.jpg" data-src="../static/img/slides/slide1.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/2.jpg" data-src="../static/img/slides/slide2.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/3.jpg" data-src="../static/img/slides/slide3.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/4.jpg" data-src="../static/img/slides/slide4.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/5.jpg" data-src="../static/img/slides/slide5.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/6.jpg" data-src="../static/img/slides/slide6.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/7.jpg" data-src="../static/img/slides/slide7.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-                <div data-thumb="../static/img/slides/thumbs/8.jpg" data-src="../static/img/slides/slide8.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        <em>It's completely free</em> (even if a donation is appreciated)
-                    </div>
-                </div>
-            </div>
-            <div style="clear:both; display:block; height:10px"></div>
-        </div>
-
-
-    </section>
-{% endblock %}
 
 {% block echarts %}
+    <div id="l1">
+        <script src="../static/js/index/energy.js"></script>
+    </div>
+    <div id="c1">
+        <script src="../static/js/index/product.js"></script>
+    </div>
+    <div id="c2">
+        <script src="../static/js/index/Vc.js"></script>
+    </div>
+    <div id="r1">
+        <script src="../static/js/index/orchard.js"></script>
+    </div>
+    <div id="r2">
+        <script src="../static/js/index/Vb.js"></script>
+    </div>
+{#    <div id="r3">#}
+{#        <script src="../static/js/wordcloud.js"></script>#}
+{#    </div>#}
 {% endblock %}

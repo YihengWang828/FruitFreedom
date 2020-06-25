@@ -20,16 +20,7 @@
 	<script type='text/javascript' src='../static/js/slide/jquery.min.js'></script>
 	<script type='text/javascript' src='../static/js/slide/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='../static/js/slide/camera.min.js'></script>
-    <script>
-		jQuery(function(){
-			jQuery('#camera_wrap').camera({
-				height: '400px',
-				loader: 'bar',
-				pagination: false,
-				thumbnails: true
-			});
-		});
-	</script>
+    {% block jquery %}{% endblock %}
     <style>
         header {}
         .wrap-header{width:960px;height: 130px; position:relative; margin: 0px auto; background:#ffffff; margin-top:50px; border-bottom:1px dashed #999999;}
@@ -108,6 +99,15 @@
             /*background: #768;*/
         }
         #r1{
+            position: absolute;/*相对于整个页面的绝对定位*/
+            width: 35%;
+            height: 50%;
+            top:50%;
+            left: 65%;
+            overflow: hidden;
+            /*background: #897;*/
+        }
+        #r3{
             position: absolute;/*相对于整个页面的绝对定位*/
             width: 35%;
             height: 50%;

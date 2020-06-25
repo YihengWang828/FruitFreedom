@@ -21,7 +21,7 @@
     <SUITE FILE_PATH="coverage/FruitFree$FruitFree.coverage" NAME="FruitFree Coverage Results" MODIFIED="1592730405289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/FruitFree$Map_Distribution.coverage" NAME="Map_Distribution Coverage Results" MODIFIED="1592743418855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/compute" />
     <SUITE FILE_PATH="coverage/FruitFree$2019_Fruit_Price.coverage" NAME="2019_Fruit_Price Coverage Results" MODIFIED="1592743672791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/compute" />
-    <SUITE FILE_PATH="coverage/FruitFree$FruitFree__1_.coverage" NAME="FruitFree (1) Coverage Results" MODIFIED="1592987056995" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskr" />
+    <SUITE FILE_PATH="coverage/FruitFree$FruitFree__1_.coverage" NAME="FruitFree (1) Coverage Results" MODIFIED="1593094418496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskr" />
     <SUITE FILE_PATH="coverage/FruitFree$main.coverage" NAME="main Coverage Results" MODIFIED="1592733737297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider/taobao/taobaoCrawl" />
     <SUITE FILE_PATH="coverage/FruitFree$recommend.coverage" NAME="recommend Coverage Results" MODIFIED="1592799038775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/compute" />
   </component>
@@ -38,26 +38,28 @@
         <entry file="file://$PROJECT_DIR$/flaskr/FruitFree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+              <caret line="149" column="118" selection-start-line="149" selection-start-column="118" selection-end-line="149" selection-end-column="118" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
-                <element signature="e#496#1563#0" expanded="false" />
-                <element signature="e#1656#3125#0" expanded="false" />
-                <element signature="e#3208#4291#0" expanded="false" />
-                <marker date="1592987405192" expanded="true" signature="519:588" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="724:779" placeholder="select categ... map_distribution" />
-                <marker date="1592987405192" expanded="true" signature="1297:1347" placeholder="select regio... map_distribution" />
-                <marker date="1592987405192" expanded="true" signature="1297:1356" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="1679:1765" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="1901:1948" placeholder="select type 2019_fruit_price" />
-                <marker date="1592987405192" expanded="true" signature="2609:2686" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="2825:2896" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="3231:3287" placeholder="select type all_category" />
-                <marker date="1592987405192" expanded="true" signature="3231:3317" placeholder="select pictu... all_category" />
-                <marker date="1592987405192" expanded="true" signature="3453:3483" placeholder="select month... " />
-                <marker date="1592987405192" expanded="true" signature="3453:3496" placeholder="select type all_category" />
-                <marker date="1592987405192" expanded="true" signature="4017:4073" placeholder="select pictu... all_category" />
-                <marker date="1592987405192" expanded="true" signature="4017:4105" placeholder="select pictu... all_category" />
+                <element signature="e#1282#2349#0" expanded="false" />
+                <element signature="e#2442#3911#0" expanded="false" />
+                <marker date="1593094307852" expanded="true" signature="467:512" placeholder="select categ... recommend" />
+                <marker date="1593094307852" expanded="true" signature="467:521" placeholder="select categ... recommend" />
+                <marker date="1593094307852" expanded="true" signature="738:799" placeholder="select type,... all_category" />
+                <marker date="1593094307852" expanded="true" signature="1305:1374" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="1510:1565" placeholder="select categ... map_distribution" />
+                <marker date="1593094307852" expanded="true" signature="2083:2133" placeholder="select regio... map_distribution" />
+                <marker date="1593094307852" expanded="true" signature="2083:2142" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="2465:2551" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="2687:2734" placeholder="select type 2019_fruit_price" />
+                <marker date="1593094307852" expanded="true" signature="3395:3472" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="3611:3682" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="4018:4074" placeholder="select type all_category" />
+                <marker date="1593094307852" expanded="true" signature="4018:4104" placeholder="select pictu... all_category" />
+                <marker date="1593094307852" expanded="true" signature="4240:4270" placeholder="select month... " />
+                <marker date="1593094307852" expanded="true" signature="4240:4283" placeholder="select type all_category" />
+                <marker date="1593094307852" expanded="true" signature="4876:4932" placeholder="select pictu... all_category" />
+                <marker date="1593094307852" expanded="true" signature="4876:4964" placeholder="select pictu... all_category" />
               </folding>
             </state>
           </provider>
@@ -66,37 +68,61 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.8">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/templates/index2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.0222225">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.577778">
+              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4974705">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state vertical-scroll-proportion="-9.177778">
+              <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recommend.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flaskr/templates/recommend.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="2.7318718">
+              <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding>
-                <element signature="e#3473#3691#0#HTML" expanded="false" />
-                <element signature="e#3703#3919#0#HTML" expanded="false" />
-                <element signature="e#3931#4147#0#HTML" expanded="false" />
-                <element signature="e#4159#4375#0#HTML" expanded="false" />
-                <element signature="e#4387#4603#0#HTML" expanded="false" />
+                <element signature="e#1578#1624#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="camera.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/static/css/camera.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.9059829">
+              <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.2560976">
+              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="camera.min.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/static/js/slide/camera.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="171.63889">
+              <caret line="3" column="38743" selection-start-line="3" selection-start-column="38725" selection-end-line="3" selection-end-column="38743" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -141,10 +167,14 @@
         <option value="$PROJECT_DIR$/flaskr/static/css/slide_show.css" />
         <option value="$PROJECT_DIR$/spider/taobao/config.py" />
         <option value="$PROJECT_DIR$/flaskr/static/js/slide_show.js" />
-        <option value="$PROJECT_DIR$/flaskr/templates/recommend.html" />
-        <option value="$PROJECT_DIR$/flaskr/FruitFree.py" />
-        <option value="$PROJECT_DIR$/flaskr/templates/index.html" />
+        <option value="$PROJECT_DIR$/flaskr/templates/index2.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/base.html" />
+        <option value="$PROJECT_DIR$/flaskr/static/js/wordcloud.js" />
+        <option value="$PROJECT_DIR$/flaskr/templates/index.html" />
+        <option value="$PROJECT_DIR$/flaskr/FruitFree.py" />
+        <option value="$PROJECT_DIR$/flaskr/static/js/slide/camera.min.js" />
+        <option value="$PROJECT_DIR$/flaskr/static/css/camera.css" />
+        <option value="$PROJECT_DIR$/flaskr/templates/recommend.html" />
       </list>
     </option>
   </component>
@@ -191,6 +221,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,11 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -291,7 +318,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -304,19 +330,19 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\templates" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img\slides" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js\slide" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\compute" />
       <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\resource\yimutian\first" />
       <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\spider" />
       <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\flaskr" />
       <recent name="C:\Users\Hazewu\Desktop\Fruit\projects\FruitFree\templates\template" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js\slide" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\css" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\templates" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js\index" />
     </key>
   </component>
   <component name="RunManager" selected="Python.FruitFree (1)">
@@ -641,7 +667,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16006424" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16220556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -681,46 +707,11 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/compute/2019_Fruit_Price.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute/all_category.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/FruitFree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/taobao/搜索页面_梨_50_1_2020-06-15_09_55_31.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/jintouwang_2019/jintouwang_2019.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider/friut_trade/fruit_trade.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="8.048301">
@@ -912,13 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/static/css/slide_show.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.377778">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/taobao/搜索页面_哈密瓜_50_1_2020-06-15_09_52_11.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -951,23 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/recommend.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.6">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/static/js/index/energy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,7 +942,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -983,13 +949,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/static/js/index/Vb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/slide/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="251.875">
+          <caret line="1" column="57742" selection-start-line="1" selection-start-column="57741" selection-end-line="1" selection-end-column="57742" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/slide/jquery.easing.1.3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.061359867">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1003,41 +986,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/index1.html">
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/index/energy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.733334">
-          <caret line="407" column="0" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
-          <folding>
-            <element signature="n#script#0;n#!!top" expanded="false" />
-            <element signature="n#script#1;n#!!top" expanded="false" />
-            <element signature="n#script#2;n#!!top" expanded="false" />
-            <element signature="n#script#3;n#!!top" expanded="false" />
-            <element signature="e#13458#13618#0#HTML" expanded="false" />
-            <element signature="n#script#4;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/index2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.0222225">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="43" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/static/css/camera.css">
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/wordcloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="155" column="22" selection-start-line="155" selection-start-column="22" selection-end-line="155" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/static/js/slide/jquery.easing.1.3.js">
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.577778">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1045,50 +1013,78 @@
     <entry file="file://$PROJECT_DIR$/flaskr/FruitFree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
+          <caret line="149" column="118" selection-start-line="149" selection-start-column="118" selection-end-line="149" selection-end-column="118" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
-            <element signature="e#496#1563#0" expanded="false" />
-            <element signature="e#1656#3125#0" expanded="false" />
-            <element signature="e#3208#4291#0" expanded="false" />
-            <marker date="1592987405192" expanded="true" signature="519:588" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="724:779" placeholder="select categ... map_distribution" />
-            <marker date="1592987405192" expanded="true" signature="1297:1347" placeholder="select regio... map_distribution" />
-            <marker date="1592987405192" expanded="true" signature="1297:1356" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="1679:1765" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="1901:1948" placeholder="select type 2019_fruit_price" />
-            <marker date="1592987405192" expanded="true" signature="2609:2686" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="2825:2896" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="3231:3287" placeholder="select type all_category" />
-            <marker date="1592987405192" expanded="true" signature="3231:3317" placeholder="select pictu... all_category" />
-            <marker date="1592987405192" expanded="true" signature="3453:3483" placeholder="select month... " />
-            <marker date="1592987405192" expanded="true" signature="3453:3496" placeholder="select type all_category" />
-            <marker date="1592987405192" expanded="true" signature="4017:4073" placeholder="select pictu... all_category" />
-            <marker date="1592987405192" expanded="true" signature="4017:4105" placeholder="select pictu... all_category" />
+            <element signature="e#1282#2349#0" expanded="false" />
+            <element signature="e#2442#3911#0" expanded="false" />
+            <marker date="1593094307852" expanded="true" signature="467:512" placeholder="select categ... recommend" />
+            <marker date="1593094307852" expanded="true" signature="467:521" placeholder="select categ... recommend" />
+            <marker date="1593094307852" expanded="true" signature="738:799" placeholder="select type,... all_category" />
+            <marker date="1593094307852" expanded="true" signature="1305:1374" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="1510:1565" placeholder="select categ... map_distribution" />
+            <marker date="1593094307852" expanded="true" signature="2083:2133" placeholder="select regio... map_distribution" />
+            <marker date="1593094307852" expanded="true" signature="2083:2142" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="2465:2551" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="2687:2734" placeholder="select type 2019_fruit_price" />
+            <marker date="1593094307852" expanded="true" signature="3395:3472" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="3611:3682" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="4018:4074" placeholder="select type all_category" />
+            <marker date="1593094307852" expanded="true" signature="4018:4104" placeholder="select pictu... all_category" />
+            <marker date="1593094307852" expanded="true" signature="4240:4270" placeholder="select month... " />
+            <marker date="1593094307852" expanded="true" signature="4240:4283" placeholder="select type all_category" />
+            <marker date="1593094307852" expanded="true" signature="4876:4932" placeholder="select pictu... all_category" />
+            <marker date="1593094307852" expanded="true" signature="4876:4964" placeholder="select pictu... all_category" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/flaskr/static/css/slide_show.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.8">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-4.695122">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4974705">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state vertical-scroll-proportion="-9.177778">
+          <caret line="114" column="22" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/slide/camera.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="171.63889">
+          <caret line="3" column="38743" selection-start-line="3" selection-start-column="38725" selection-end-line="3" selection-end-column="38743" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/css/camera.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9059829">
+          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2560976">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/recommend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.7318718">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
           <folding>
-            <element signature="e#3473#3691#0#HTML" expanded="false" />
-            <element signature="e#3703#3919#0#HTML" expanded="false" />
-            <element signature="e#3931#4147#0#HTML" expanded="false" />
-            <element signature="e#4159#4375#0#HTML" expanded="false" />
-            <element signature="e#4387#4603#0#HTML" expanded="false" />
+            <element signature="e#1578#1624#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 from flask import Flask,url_for,render_template,request
 import pymysql
+import datetime
+import random
 
 # 连接数据库
 conn = pymysql.connect(host='localhost',
@@ -10,9 +12,35 @@ conn = pymysql.connect(host='localhost',
 # 创建一个游标
 cursor = conn.cursor()
 
+# 今日小窗内容
+tmp_date = datetime.datetime.now() #获取系统当前时间
+tmp_month = tmp_date.month
+
+# 在recommend表中找适合的月份的水果种类和其省份
+sql_recommend = 'select category,province from recommend where month = {}'.format(tmp_month)
+cursor.execute(sql_recommend)
+data_recommend = cursor.fetchall()
+
+daily_fruit = []
+# data_recommend存储了，水果种类，省份
+for recommend_fruit in data_recommend:
+    # 根据水果种类进行查询，水果种类、品牌、照片
+    sql_daily = 'select type,brand,picture from all_category where type = "{}" '.format(recommend_fruit[0])
+    cursor.execute(sql_daily)
+    # 获取每一种的前三，存入总的今日水果推荐表
+    tmp_date = cursor.fetchmany(3)
+    for i in tmp_date:
+        daily_fruit.append(i)
+
+# 实际的水果推荐表
+real_recommend_fruit = random.sample(daily_fruit, 3)
+for i in real_recommend_fruit:
+    print(i)
+
+
 app = Flask(__name__)
 
-
+# 推荐小窗放首页
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -91,6 +119,7 @@ def fruit_2019_price():
 # 推荐函数，小窗放哪里
 @app.route('/recommend/',methods=['GET','POST'])
 def recommend():
+
     # 查询初始设定值数据
     sql = "select picture,brand,type,sales,marks from all_category order by marks desc limit 0,10"
     cursor.execute(sql)   # 执行sql
@@ -103,13 +132,13 @@ def recommend():
     # 查询所有数据，返回结果默认以元组形式，所所以可以进行迭代处理
     types = cursor.fetchall()
     if request.method == 'GET':
-        return render_template('recommend.html',information=all_recommend,types=types)
+        return render_template('recommend.html',information=all_recommend,types=types,real_recommend=real_recommend_fruit)
     else:
         type = request.form.get('type')
 
         # 未选择水果种类
         if type == "None":
-            return render_template('recommend.html',information=all_recommend,types=types)
+            return render_template('recommend.html',information=all_recommend,types=types,real_recommend=real_recommend_fruit)
         else:
             # 根据水果种类进行查询
             where = 'where type = "{}" '.format(type)
@@ -118,7 +147,7 @@ def recommend():
         print(type)
         cursor.execute(sql)   # 执行sql
         query_data = cursor.fetchall()
-        return render_template('recommend.html',information=query_data,types=types)
+        return render_template('recommend.html',information=query_data,types=types,real_recommend=real_recommend_fruit)
 
 
 # 执行

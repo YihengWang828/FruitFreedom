@@ -15,25 +15,43 @@
     </nav>
 {% endblock %}
 
+{% block jquery %}
+    <script>
+		jQuery(function(){
+			jQuery('#camera_wrap').camera({
+				height: '400px',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: true
+			});
+		});
+	</script>
+{% endblock %}
+
+{% block slide_content %}
+    <!--------------Content--------------->
+    <section id="content">
+        <div class="feature">
+            <div class="camera_wrap camera_magenta_skin" id="camera_wrap">
+                <div data-thumb="../static/img/slides/thumbs/1.jpg" data-src="../static/img/slides/slide1.jpg">
+                    <div class="camera_caption fadeFromBottom">
+                        Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+                    </div>
+                </div>
+                {% for i in real_recommend %}
+                    <div data-thumb="#" data-src="{{ i[2] }}">
+                        <div class="camera_caption fadeFromBottom">
+                            {{ i[1] }}. <em>Try to resize the browser window</em>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div style="clear:both; display:block; height:10px"></div>
+        </div>
+    </section>
+{% endblock %}
+
 {% block echarts %}
-
-{#<title>显示图像</title>#}
-{#<link rel="stylesheet" href="{{ url_for('static',filename='css/slide_show.css') }}">#}
-{#<script language="javascript" type="text/javascript" src="{{url_for('static', filename='js/slide_show.js') }}"></script>#}
-{#<div id="fade_focus">#}
-{#    <div class="loading">Loading...</div>#}
-{#    <ul>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#      <li><img src="../static/img/bg_1.jpg" width="600" height="509"  /></li>#}
-{#    </ul>#}
-{#</div>#}
-
 
 
 
