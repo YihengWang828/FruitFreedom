@@ -4,77 +4,76 @@
     推荐
 {% endblock %}
 
-{% block navigation_bar %}
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">首页</a></li>
-            <li><a href="{{ url_for('map_distribution') }}">产地</a></li>
-            <li><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
-            <li   class="current"><a href="{{ url_for('recommend') }}">推荐</a></li>
-        </ul>
-    </nav>
+{% block nav %}
+    <ul class="je-navs-stacked  je-rdu3 je-f12 je-fl je-mr30 txt">
+        <li class="item"><a href="{{ url_for('index') }}">首页</a></li>
+        <li class="item"><a href="{{ url_for('map_distribution') }}">产地</a></li>
+        <li class="item"><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
+        <li class="item on"><a href="{{ url_for('recommend') }}">推荐</a></li>
+    </ul>
 {% endblock %}
 
-{% block jquery %}
-    <script>
-		jQuery(function(){
-			jQuery('#camera_wrap').camera({
-				height: '400px',
-				loader: 'bar',
-				pagination: false,
-				thumbnails: true
-			});
-		});
-	</script>
-{% endblock %}
+{#{% block jquery %}#}
+{#    <script>#}
+{#		jQuery(function(){#}
+{#			jQuery('#camera_wrap').camera({#}
+{#				height: '400px',#}
+{#				loader: 'bar',#}
+{#				pagination: false,#}
+{#				thumbnails: true#}
+{#			});#}
+{#		});#}
+{#	</script>#}
+{#{% endblock %}#}
+{##}
+{#{% block slide_content %}#}
+{#    <!--------------Content--------------->#}
+{#    <section id="content">#}
+{#        <div class="feature">#}
+{#            <div class="camera_wrap camera_magenta_skin" id="camera_wrap">#}
+{#                <div data-thumb="../static/img/slides/thumbs/1.jpg" data-src="../static/img/slides/slide1.jpg">#}
+{#                    <div class="camera_caption fadeFromBottom">#}
+{#                        Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>#}
+{#                    </div>#}
+{#                </div>#}
+{#                {% for i in real_recommend %}#}
+{#                    <div data-thumb="#" data-src="{{ i[2] }}">#}
+{#                        <div class="camera_caption fadeFromBottom">#}
+{#                            {{ i[1] }}. <em>Try to resize the browser window</em>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#            <div style="clear:both; display:block; height:10px"></div>#}
+{#        </div>#}
+{#    </section>#}
+{#{% endblock %}#}
+{##}
+{% block function_echarts %}
+    <div id="function_content" style="width:900px;height:500px;">
+        <div class="recommend_category">
+            <form action="{{ url_for('recommend') }}" method='POST'>
+                <select name="type">
+                    <option value="None">请选择水果种类</option>
+                    {% for t in types %}
+                        <option value="{{ t[0] }}">{{ t[0] }}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">查询</button>
+            </form>
 
-{% block slide_content %}
-    <!--------------Content--------------->
-    <section id="content">
-        <div class="feature">
-            <div class="camera_wrap camera_magenta_skin" id="camera_wrap">
-                <div data-thumb="../static/img/slides/thumbs/1.jpg" data-src="../static/img/slides/slide1.jpg">
-                    <div class="camera_caption fadeFromBottom">
-                        Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                    </div>
-                </div>
-                {% for i in real_recommend %}
-                    <div data-thumb="#" data-src="{{ i[2] }}">
-                        <div class="camera_caption fadeFromBottom">
-                            {{ i[1] }}. <em>Try to resize the browser window</em>
-                        </div>
+            <table>
+                {% for f in information %}
+                    <div class="post">
+                        <img src="{{ f[0] }}">
+                        <h4>
+                            <a href="#">{{ f[1] }}</a>
+                        </h4>
+                        <p>{{ f[2] }}</p>
+                        <p>{{ f[3] }}人付款，评分{{ f[4] }}</p>
                     </div>
                 {% endfor %}
-            </div>
-            <div style="clear:both; display:block; height:10px"></div>
+            </table>
         </div>
-    </section>
-{% endblock %}
-
-{% block echarts %}
-
-
-
-    <form action="{{ url_for('recommend') }}" method='POST'>
-        <select name="type">
-            <option value="None">请选择水果种类</option>
-            {% for t in types %}
-                <option value="{{ t[0] }}">{{ t[0] }}</option>
-            {% endfor %}
-        </select>
-        <button type="submit">查询</button>
-    </form>
-
-    <table>
-        {% for f in information %}
-            <div class="post">
-                <img src="{{ f[0] }}">
-                <h4>
-                    <a href="#">{{ f[1] }}</a>
-                </h4>
-                <p>{{ f[2] }}</p>
-                <p>{{ f[3] }}人付款，评分{{ f[4] }}</p>
-            </div>
-        {% endfor %}
-    </table>
+    </div>
 {% endblock %}

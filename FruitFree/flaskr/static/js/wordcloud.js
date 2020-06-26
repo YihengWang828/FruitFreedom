@@ -1,9 +1,9 @@
-var myChart = echarts.init(document.getElementById('r3'));
+var myChart = echarts.init(document.getElementById('echarts4'));
 
-let datas = [
-        {
+var datas = [
+            {
                 name: "车厘子",
-                value: 4503 ,
+                value: 4503,
             },
             {
                 name: " 榴莲",
@@ -129,16 +129,12 @@ let datas = [
                 name: " 菠萝蜜",
                 value: 7485
             },
-
-    ]
-
-
-
+        ]
 option = {
-     title:{
-        text:'百度搜索指数',
-      subtext:'数据来源：百度指数'
-    },
+    // title: {
+    //     text: '百度搜索指数',
+    //     subtext: '数据来源：百度指数'
+    // },
     tooltip: {
         show: true,
         position: 'top',
@@ -174,7 +170,7 @@ option = {
         drawOutOfBound: false,
         textStyle: {
             normal: {
-                color: function() {
+                color: function () {
                     return 'rgb(' + [
                         Math.round(Math.random() * 200 + 55),
                         Math.round(Math.random() * 200 + 55),
@@ -192,4 +188,5 @@ option = {
 };
 
 // 使用刚指定的配置项和数据显示图表。
+
 myChart.setOption(option);

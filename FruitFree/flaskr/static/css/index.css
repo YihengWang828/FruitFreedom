@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    background-image: url(congruent_pentagon.png);
+    /*background-color: #3d9970;*/
+    /*background-repeat: no-repeat;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*background-size: cover;*/
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+#title {
+    position:fixed;
+    width: 100%;
+    height: 10%;
+    top: 0;
+    left: 0;
+    background: #2E8B57;
+    color: white;
+    font-size: 35px;
+    /*居中分布*/
+    display: flex;
+    align-items: center;
+    /*竖直方向居中*/
+    justify-content: center;
+    z-index: 100;
+}
+
+#tim {
+    position:fixed;
+    /*width: 30%;*/
+    height: 10%;
+    top: 5%;
+    right: 2%;
+    color: #ffffff;
+    /*background: #456;*/
+    z-index: 100;
+}
+
+#nav {
+    position:fixed;
+    width: 10%;
+    height: 500%;
+    top: 10%;
+    left: 0;
+    overflow: hidden;
+    background: #3d9970;
+    opacity: 0.7;
+
+}
+
+#lev1 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 35%;
+    height: 80%;
+    top: 12%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev2 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 48%;
+    height: 80%;
+    top: 12%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev3 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 50%;
+    height: 85%;
+    top: 100%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev4 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 33%;
+    height: 85%;
+    top: 100%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev5 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 40%;
+    height: 85%;
+    top: 187%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}
+
+#lev6 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 43%;
+    height: 85%;
+    top: 187%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}
+
+.txt {
+    font-family: '幼圆';
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.titletext {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: "幼圆";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#function_content {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 48%;
+    height: 80%;
+    top: 12%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+/*-------------recommend_content */
+.recommend_category { }
+.recommend_category .post {
+    height:100px;
+    margin-bottom: 40px;
+}
+.recommend_category .post h4 {
+    font-size:20px;
+    font-weight:normal;
+}
+.recommend_category .post img{
+    float:left;
+    padding:5px;
+    border:1px solid #CCC;
+    margin-right:10px;
+    width: 150px;
+    height: 100px;
+}
+.recommend_category .post p{
+    color:#A3A3A3;
+    font-style:italic;
+    font-size:14px;
+}

@@ -4,35 +4,56 @@
     首页
 {% endblock %}
 
-{% block navigation_bar %}
-    <nav>
-        <ul>
-            <li class="current"><a href="{{ url_for('index') }}">首页</a></li>
-            <li><a href="{{ url_for('map_distribution') }}">产地</a></li>
-            <li><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
-            <li><a href="{{ url_for('recommend') }}">推荐</a></li>
-        </ul>
-    </nav>
+{% block nav %}
+    <ul class="je-navs-stacked  je-rdu3 je-f12 je-fl je-mr30 txt">
+        <li class="item on"><a href="{{ url_for('index') }}">首页</a></li>
+        <li class="item"><a href="{{ url_for('map_distribution') }}">产地</a></li>
+        <li class="item"><a href="{{ url_for('fruit_2019_price') }}">价格</a></li>
+        <li class="item"><a href="{{ url_for('recommend') }}">推荐</a></li>
+    </ul>
 {% endblock %}
 
-
-{% block echarts %}
-    <div id="l1">
-        <script src="../static/js/index/energy.js"></script>
+{% block index_echarts %}
+    <div id="lev1">
+        <div class="titletext">中国水果产量区域分布情况</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts1" style="width: 550px;height:550px;">
+            <script src="../static/js/product.js"></script>
+        </div>
     </div>
-    <div id="c1">
-        <script src="../static/js/index/product.js"></script>
+    <div id="lev2">
+        <div class="titletext">中国果园面积分布情况</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts2" style="width: 650px;height:550px;">
+            <script src="../static/js/orchard.js"></script>
+        </div>
     </div>
-    <div id="c2">
-        <script src="../static/js/index/Vc.js"></script>
+    <div id="lev3">
+        <div class="titletext">常见水果所含能量</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts3" style="width: 650px;height:550px;">
+            <script src="../static/js/energy.js"></script>
+        </div>
     </div>
-    <div id="r1">
-        <script src="../static/js/index/orchard.js"></script>
+    <div id="lev4">
+        <div class="titletext">常见水果日均搜索指数</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts4" style="width: 550px;height:550px;">
+            <script src="../static/js/wordcloud.js"></script>
+        </div>
     </div>
-    <div id="r2">
-        <script src="../static/js/index/Vb.js"></script>
+    <div id="lev5">
+        <div class="titletext">常见水果B族维生素含量(mg/100g)</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts5" style="width: 650px;height:550px;">
+            <script src="../static/js/Vc.js"></script>
+        </div>
     </div>
-{#    <div id="r3">#}
-{#        <script src="../static/js/wordcloud.js"></script>#}
-{#    </div>#}
+    <div id="lev6">
+        <div class="titletext">常见水果维生素C含量</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div id="echarts6" style="width: 650px;height:550px;">
+            <script src="../static/js/Vb.js"></script>
+        </div>
+    </div>
 {% endblock %}

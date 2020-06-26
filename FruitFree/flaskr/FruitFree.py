@@ -2,6 +2,7 @@ from flask import Flask,url_for,render_template,request
 import pymysql
 import datetime
 import random
+import utils
 
 # 连接数据库
 conn = pymysql.connect(host='localhost',
@@ -44,6 +45,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/time')
+def gettime():
+    return utils.get_time()
 
 # 产地行情函数
 @app.route('/map_distribution/',methods=['GET','POST'])
