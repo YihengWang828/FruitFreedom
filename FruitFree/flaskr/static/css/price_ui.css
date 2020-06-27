@@ -80,6 +80,16 @@ body {
     background-color: rgba(104, 131, 139, 0.2);
     border-radius: 10px;
 }
+#search4{
+    position:absolute;
+    width: 24%;
+    height: 69%;
+    top: 29%;
+    left: 12%;
+    overflow: hidden;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
 #show{
     position:absolute;
     width: 60%;
@@ -90,11 +100,22 @@ body {
     background-color: rgba(104, 131, 139, 0.2);
     border-radius: 10px;
 }
-.titletext {
+.searchtext {
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 5px;
     font-family: "幼圆";
     font-size: 15px;
     font-weight: bold;
+}
+.titletext {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-family: "幼圆";
+    font-size: 20px;
+    font-weight: bold;
+}
+table{
+    margin:0 auto
 }
