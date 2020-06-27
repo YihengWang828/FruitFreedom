@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93e10e32-370f-4d50-b21f-ab7326ea1bef" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/flaskr/static/css/restaurant.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/static/css/jeuicss/jeui.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/static/css/jeuicss/jeui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/static/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flaskr/static/css/price_ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/static/css/price_ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/templates/index_temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/index_temp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/templates/map_ui.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/map_ui.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/templates/price_ui.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/price_ui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/templates/recommend_temp.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/recommend_temp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,19 +63,19 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Git Desktop\FruitFreedom\FruitFree\flaskr\static\css" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\css" />
+      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img" />
+      <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\compute" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js\index" />
       <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\css" />
       <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js" />
       <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img" />
       <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\js" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\css" />
-      <recent name="C:\Users\Hazewu\Desktop\FruitFree\flaskr\static\img" />
-      <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\compute" />
-      <recent name="C:\Users\Hazewu\Desktop\project\FruitFree\resource\yimutian\first" />
     </key>
   </component>
   <component name="RunManager" selected="Python.FruitFree (1)">
@@ -238,7 +236,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592705024520</updated>
-      <workItem from="1593242695858" duration="9601000" />
+      <workItem from="1593242695858" duration="11137000" />
+      <workItem from="1593271636739" duration="2188000" />
     </task>
     <servers />
   </component>
@@ -254,22 +253,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="348" key="GridCell.Tab.0.bottom" timestamp="1593267701670">
+    <state width="1493" height="105" key="GridCell.Tab.0.bottom" timestamp="1593274751474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593267701670" />
-    <state width="1493" height="348" key="GridCell.Tab.0.center" timestamp="1593267701670">
+    <state width="1493" height="105" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593274751474" />
+    <state width="1493" height="105" key="GridCell.Tab.0.center" timestamp="1593274751473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593267701670" />
-    <state width="1493" height="348" key="GridCell.Tab.0.left" timestamp="1593267701670">
+    <state width="1493" height="105" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593274751473" />
+    <state width="1493" height="105" key="GridCell.Tab.0.left" timestamp="1593274751473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593267701670" />
-    <state width="1493" height="348" key="GridCell.Tab.0.right" timestamp="1593267701670">
+    <state width="1493" height="105" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593274751473" />
+    <state width="1493" height="105" key="GridCell.Tab.0.right" timestamp="1593274751474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="348" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593267701670" />
+    <state width="1493" height="105" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593274751474" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1593248743204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -287,6 +286,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FruitFree$FruitFree__1_.coverage" NAME="FruitFree (1) Coverage Results" MODIFIED="1593267701658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskr" />
+    <SUITE FILE_PATH="coverage/FruitFree$FruitFree__1_.coverage" NAME="FruitFree (1) Coverage Results" MODIFIED="1593274713037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskr" />
+    <SUITE FILE_PATH="coverage/FruitFree$FruitFree.coverage" NAME="FruitFree Coverage Results" MODIFIED="1593271662601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

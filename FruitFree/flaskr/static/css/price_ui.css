@@ -90,6 +90,26 @@ body {
     background-color: rgba(104, 131, 139, 0.2);
     border-radius: 10px;
 }
+#search5{
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 40%;
+    height: 85%;
+    top: 12%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}
+#search6{
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 43%;
+    height: 85%;
+    top: 12%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}
 #show{
     position:absolute;
     width: 60%;
@@ -119,3 +139,18 @@ body {
 table{
     margin:0 auto
 }
+
+
+
+/* table */
+.recom-table{width:90%;font-weight: bold;}
+.recom-table tr{-webkit-transition:all .3s;transition:all .3s;}
+.recom-table thead tr{background-color:#f2f2f2;}
+.recom-table td,.recom-table th{padding:8px 12px;min-height:20px;border:1px solid #e0e0e0;font-size:14px;}
+.recom-table tbody tr:hover{background-color:#fffeee;}
+.recom-table[even] tr:nth-child(even){background-color:#f8f8f8;}
+.recom-table[skin=botline],.recom-table[skin=leftline]{border:1px solid #e0e0e0;}
+.recom-table[skin=botline] td,.recom-table[skin=botline] th{border:none;border-bottom:1px solid #e0e0e0;}
+.recom-table[skin=leftline] th{border-bottom:1px solid #e0e0e0;}
+.recom-table[skin=leftline] td{border:none;border-left:1px solid #e0e0e0;}
+.recom-table[skin=noline] td,.recom-table[skin=noline] th{border:none;}
