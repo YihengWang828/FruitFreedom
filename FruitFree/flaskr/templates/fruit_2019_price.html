@@ -36,7 +36,7 @@
             <button type="submit">查询</button>
         </form>
 
-            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
         <div id="fruit_price" style="width: 900px;height:500px;"></div>
         <script type="text/javascript">
             // 基于准备好的dom，初始化echarts实例
@@ -46,15 +46,15 @@
             var option = {
                 title: {
                     text:
-                            {% if year == 0 %}
-                                '{{ fruit[0][0] }}月份{{ type }}价格波动图',
-                            {% else %}
-                                '{{ year }}年{{ type }} 价格波动图'
-                            {% endif %}
+                        {% if year == 0 %}
+                            '{{ fruit[0][0] }}月份{{ type }}价格波动图',
+                        {% else %}
+                            '{{ year }}年{{ type }} 价格波动图'
+                        {% endif %}
                 },
                 tooltip: {},
                 legend: {
-                    data:['price']
+                    data: ['price']
                 },
                 xAxis: {
                     data: [
