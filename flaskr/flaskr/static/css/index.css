@@ -1,0 +1,61 @@
+#lev1 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 35%;
+    height: 80%;
+    top: 12%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev2 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 48%;
+    height: 80%;
+    top: 12%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev3 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 50%;
+    height: 85%;
+    top: 100%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev4 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 33%;
+    height: 85%;
+    top: 100%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+}
+
+#lev5 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 40%;
+    height: 85%;
+    top: 187%;
+    left: 12%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}
+
+#lev6 {
+    position: absolute; /*相对于整个页面的绝对定位*/
+    width: 43%;
+    height: 85%;
+    top: 187%;
+    right: 2%;
+    background-color: rgba(104, 131, 139, 0.2);
+    border-radius: 10px;
+    bottom: 2%;
+}

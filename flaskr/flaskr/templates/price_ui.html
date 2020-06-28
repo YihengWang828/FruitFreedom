@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"水果自由"大数据平台</title>
+    <script src="../static/js/jquery.js"></script>
+    <link href="../static/css/function_ui.css" rel="stylesheet"/>
+    <script src="../static/js/controller.js"></script>
+    <link rel="stylesheet" href="../static/css/jeuicss/jeui.css" media="all">
+    <link rel="stylesheet" href="../static/css/jeuicss/admin.css" media="all">
+    <link rel="stylesheet" href="../static/css/jeuicss/gload.css" media="all"/>
+    <link rel="stylesheet" href="../static/css/jeuicss/iconfont.css" media="all"/>
+    <link rel="stylesheet" href="../static/css/jeuicss/skin/jebox.css" media="all"/>
+    <link rel="stylesheet" href="../static/css/jeuicss/skin/jedate.css" media="all"/>
+    <script type="text/javascript" src="../static/js/jeuijs/modules/jeui.js"></script>
+</head>
+<body scroll="no" style="overflow-x:hidden;">
+<div id="title">“水果自由”大数据分析平台</div>
+<div id="tim">我是时间</div>
+<div id="nav">
+    <ul class="je-navs-stacked  je-rdu3 je-f14 je-fl je-mr30 txt">
+        <li class="item"><a href="">首页</a></li>
+        <li class="item"><a href="">地区价格</a></li>
+        <li class="item on"><a href="">价格波动</a></li>
+        <li class="item"><a href="">水果推荐</a></li>
+    </ul>
+</div>
+<div id="search1">
+    <div class="searchtext">水果种类选择</div>
+    <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+    <blockquote class=" je-f16 je-ovh  je-mb10">
+        <p class="je-pb5 checkbox">
+            <select class="myselect">
+                <option value="水果种类">水果种类</option>
+                <option value="榴莲">榴莲</option>
+                <option value="车厘子">车厘子</option>
+                <option value="哈密瓜">哈密瓜</option>
+            </select>
+        </p>
+    </blockquote>
+</div>
+<div id="search2">
+    <div class="searchtext">查看时间选择</div>
+    <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+    <blockquote class=" je-f16 je-ovh  je-mb10">
+        <p class="je-pb5 checkbox">
+            <select class="myselect">
+                <option value="水果种类">查看时间</option>
+                <option value="1月">1月</option>
+                <option value="2月">2月</option>
+                <option value="3月">3月</option>
+            </select>
+        </p>
+    </blockquote>
+</div>
+<div id="search3">
+    <div class="searchtext">是否查看全年选择</div>
+    <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+    <blockquote class=" je-f16 je-ovh  je-mb10">
+        <p class="je-pb5 checkbox">
+            <select class="myselect">
+                <option value="水果种类">是否查看全年</option>
+                <option value="是">是</option>
+                <option value="否">否</option>
+            </select>
+            <button class="je-btn je-f14">查询</button>
+        </p>
+    </blockquote>
+</div>
+<div id="show">
+    <div class="titletext">表名</div>
+    <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+</div>
+
+<script type="text/javascript">
+    jeui.use(["jeSelect"], function () {
+
+        $(".myselect").jeSelect({sosList: false});
+
+    });
+</script>
+</body>
+</html>

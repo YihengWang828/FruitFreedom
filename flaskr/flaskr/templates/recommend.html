@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    推荐
+{% endblock %}
+
+{% block nav %}
+    <ul class="je-navs-stacked  je-rdu3 je-f14 je-fl je-mr30 txt">
+        <li class="item"><a href="{{ url_for('index') }}">首页</a></li>
+        <li class="item"><a href="{{ url_for('map_distribution') }}">地区价格</a></li>
+        <li class="item"><a href="{{ url_for('fruit_2019_price') }}">价格波动</a></li>
+        <li class="item on"><a href="{{ url_for('recommend') }}">水果推荐</a></li>
+    </ul>
+{% endblock %}
+
+
+{% block function_echarts %}
+    <div id="search5">
+        <div class="titletext">今日推荐</div>
+        <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+        <div class="je-pb5 checkbox">
+            <table class="recom-table" skin="leftline" even>
+                <thead>
+                    <tr>
+                        <th>推荐水果</th>
+                        <th>商家</th>
+                        <th>售价</th>
+                        <th>月销量</th>
+                        <th>快递评分</th>
+                        <th>综合描述</th>
+                        <th>服务态度</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f in real_recommend %}
+                    <tr>
+                        <td>{{ f[0] }}</td>
+                        <td>{{ f[1] }}</td>
+                        <td>{{ f[2] }}</td>
+                        <td>{{ f[3] }}</td>
+                        <td>{{ f[4] }}</td>
+                        <td>{{ f[5] }}</td>
+                        <td>{{ f[6] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="search6">
+        <form action="{{ url_for('recommend') }}" method='POST'>
+            <div class="titletext">指定种类水果推荐</div>
+            <hr style="height:1px;border:none;border-top:2px solid #ffffff;"/>
+            <blockquote class=" je-f16 je-ovh  je-mb10">
+                <p class="je-pb5 checkbox">
+                    <select class="myselect" name="type">
+                        <option value="{{ type }}">{{ type }}</option>
+                        <option value="None">所有水果</option>
+                        {% for t in types %}
+                            <option value="{{ t[0] }}">{{ t[0] }}</option>
+                        {% endfor %}
+                    </select>
+                    <button class="je-btn je-f14" type="submit">查询</button>
+                </p>
+
+            <div class="recommend_category">
+                <section class="je-pb5 checkbox">
+                    <div class="content">
+                        {% for f in information %}
+                        <div class="post">
+                            <img src="{{ f[0] }}"/>
+                            <h4><a href="#">{{ f[1] }}</a></h4>
+                            <p>{{ f[2] }}</p>
+                            <p>{{ f[3] }}付款，{{ f[4] }}评分</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div>
+            </blockquote>
+        </form>
+
+
+    </div>
+
+    <script type="text/javascript">
+        jeui.use(["jeSelect"], function () {
+
+            $(".myselect").jeSelect({sosList: false});
+
+        });
+    </script>
+{% endblock %}
