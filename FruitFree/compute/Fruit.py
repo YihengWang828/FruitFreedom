@@ -5,20 +5,11 @@ from pyspark.sql.functions import *
 import pandas as pd
 import os
 import json
-import config
+from .. import config
 import sys
 # path = '/home/huasiyu/fruit_trade'
 # path = 'C:/Users/Hazewu/Desktop/spark_script/spark_script/fruit_trade'
-indexx = str(sys.path[0]).index('compute')
-path_d = str(sys.path[0])[:indexx]      # 获取上一层路径
-print(path_d)
-path = path_d + 'resource/fruit_trade'
-dir_list = os.listdir(path)
-provinces = [
-    '河北','山西','内蒙古', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽', '福建', '江西',
-    '山东', '河南', '湖北', '湖南', '广东', '广西', '海南', '四川', '贵州', '云南', '西藏', '陕西',
-    '甘肃', '青海', '宁夏', '新疆', '北京', '天津', '上海', '重庆'
-]
+
 
 def part(line):
     lst = line.split(',')
@@ -76,40 +67,51 @@ def remove(line):
 
     return True
 
-conf = SparkConf().setAppName('Fruit.py').setMaster('local[*]')
-spark = SparkSession.builder.config(conf=conf).getOrCreate()
-sc = spark.sparkContext
-schema = StructType([StructField("region", StringType(), False), StructField("category", StringType(), False),
-                     StructField("avg_price", DoubleType(), False), StructField("min_price", DoubleType(), False),
-                     StructField("max_price", DoubleType(), False), StructField("time", StringType(), False)])
+def go_3():
+    indexx = str(sys.path[0]).index('compute')
+    path_d = str(sys.path[0])[:indexx]      # 获取上一层路径
+    print(path_d)
+    path = path_d + 'resource/fruit_trade'
+    dir_list = os.listdir(path)
+    provinces = [
+        '河北','山西','内蒙古', '辽宁', '吉林', '黑龙江', '江苏', '浙江', '安徽', '福建', '江西',
+        '山东', '河南', '湖北', '湖南', '广东', '广西', '海南', '四川', '贵州', '云南', '西藏', '陕西',
+        '甘肃', '青海', '宁夏', '新疆', '北京', '天津', '上海', '重庆'
+    ]
+    conf = SparkConf().setAppName('Fruit.py').setMaster('local[*]')
+    spark = SparkSession.builder.config(conf=conf).getOrCreate()
+    sc = spark.sparkContext
+    schema = StructType([StructField("region", StringType(), False), StructField("category", StringType(), False),
+                        StructField("avg_price", DoubleType(), False), StructField("min_price", DoubleType(), False),
+                        StructField("max_price", DoubleType(), False), StructField("time", StringType(), False)])
 
-for dir in dir_list:
-    csv_path = 'file:///{}/{}'.format(path, dir)
-    #df = spark.read.format('csv').option("header", "true").schema(schema).load(csv_path)
-    RDD = sc.textFile(csv_path)
-    RDD = RDD.filter(lambda line: remove(line))
-    mappedRDD = RDD.map(part)
-    df = spark.createDataFrame(mappedRDD, schema)
-    df = df.distinct()
-    #df = df.sort("region", "category", "time")
-    df = df.orderBy("region", "category", "time")
-    df.show(5)
-    '''
-    prop = {}
-    prop['user'] = 'root'  # 表示用户名是root
-    prop['password'] = '123'  # 表示密码是123
-    prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
+    for dir in dir_list:
+        csv_path = 'file:///{}/{}'.format(path, dir)
+        #df = spark.read.format('csv').option("header", "true").schema(schema).load(csv_path)
+        RDD = sc.textFile(csv_path)
+        RDD = RDD.filter(lambda line: remove(line))
+        mappedRDD = RDD.map(part)
+        df = spark.createDataFrame(mappedRDD, schema)
+        df = df.distinct()
+        #df = df.sort("region", "category", "time")
+        df = df.orderBy("region", "category", "time")
+        df.show(5)
+        '''
+        prop = {}
+        prop['user'] = 'root'  # 表示用户名是root
+        prop['password'] = '123'  # 表示密码是123
+        prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
-    # 下面就可以连接数据库，采用append模式，表示追加记录到数据库dbtaobao的rebuy表中
-    df.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'Fruit', 'append', prop)
-    '''
+        # 下面就可以连接数据库，采用append模式，表示追加记录到数据库dbtaobao的rebuy表中
+        df.write.jdbc("jdbc:mysql://localhost:3306/datebase", 'Fruit', 'append', prop)
+        '''
 
-    prop = {}
-    prop['user'] = config.user  # 表示用户名是root
-    prop['password'] = config.password  # 表示密码是123
-    prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
+        prop = {}
+        prop['user'] = config.user  # 表示用户名是root
+        prop['password'] = config.password  # 表示密码是123
+        prop['driver'] = "com.mysql.jdbc.Driver"  # 表示驱动程序是com.mysql.jdbc.Driver
 
-    df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
-                  , 'fruit'
-                  , 'append'
-                  , prop)
+        df.write.jdbc("jdbc:mysql://localhost:3306/ffdbs?useUnicode=true&characterEncoding=utf-8"
+                    , 'fruit'
+                    , 'append'
+                    , prop)
